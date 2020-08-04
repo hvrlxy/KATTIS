@@ -1,0 +1,1 @@
+sort descending or sort and reverse takes a lot of time, possibly O(nlog(n) + n) time 
