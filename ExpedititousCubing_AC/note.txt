@@ -1,0 +1,2 @@
+Floating points in kotlin sucks!!!!!!!!!!!!!!!!!!!!!
+Next time when comparing floating point number, first make it an int, do multiplication/division to that int, then do the comparison to avoid horrible mistake.
