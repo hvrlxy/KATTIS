@@ -1,0 +1,7 @@
+Solve this problem using recursion:
+the base case will be when f(1) = 2
+when f(n) (with n>1) will be consist of f(n - 1) + number of number that are relatively prime to f(n)
+
+- Should do dynamic programming???
+
+-Must create a function to calculate all the number of coprime of n that are also less than n

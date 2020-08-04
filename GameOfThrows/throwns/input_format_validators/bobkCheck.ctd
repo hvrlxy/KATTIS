@@ -1,0 +1,16 @@
+# get number of children and number of commands
+INT(1,30,n) SPACE INT(1,100,k) NEWLINE
+
+# get commands
+REGEX("(undo [0-9]+)|-?10000|-?[0-9]{1,4}",cmd)
+
+REP(k-1)
+
+ # (INT(-10000,10000,t) || (STRING("undo") SPACE INT(1,i-1,m))) SPACE
+  SPACE REGEX("(undo [0-9]+)|-?10000|-?[0-9]{1,4}",cmd)
+
+END
+
+NEWLINE
+
+EOF
