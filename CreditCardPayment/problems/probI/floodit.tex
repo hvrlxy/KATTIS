@@ -1,0 +1,84 @@
+\problemname{Flood-It}
+
+Flood-It is a popular one player game on many smart phones.  The
+player is given an $n \times n$ board of tiles where each tile is
+given one of 6 colours (numbered 1--6).  Each tile is connected to up
+to 4 adjacent tiles in the North, South, East, and West directions.  A
+tile is connected to the origin (the tile in the upper left corner) if
+it has the same colour as the origin and there is a path to the origin
+consisting only of tiles of this colour.
+
+A player makes a move by choosing one of the 6 colours.  After the
+choice is made, all tiles that are connected to the origin are changed
+to the chosen colour.  The game proceeds until all tiles have the same
+colour.  The goal of the game is to change all the tiles to the same
+colour, preferably with the fewest number of moves possible.
+
+It has been proven that finding the optimal moves is a very hard
+problem.  For this problem, you will simulate a very simple greedy
+strategy to see how well it works:
+\begin{enumerate}
+\item for each move, choose the colour that will result in the largest
+  number of tiles connected to the origin;
+\item if there is a tie, break ties by choosing the lowest numbered colour.
+\end{enumerate}
+
+To illustrate this, we look at the first test case in the sample
+input, the original board is:
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}\hline
+    1 & 2 & 3 & 4 & 2 & 3 \\ \hline
+    3 & 3 & 4 & 5 & 2 & 1 \\ \hline
+    4 & 3 & 3 & 1 & 2 & 3 \\ \hline
+    5 & 4 & 3 & 6 & 2 & 1 \\ \hline
+    3 & 2 & 4 & 3 & 4 & 3 \\ \hline
+    2 & 3 & 4 & 1 & 5 & 6 \\ \hline
+  \end{tabular}
+\end{center}
+If we choose colour 3 for the first move, the result will be:
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}\hline
+    \cellcolor{lightgray} 3 & 2 & 3 & 4 & 2 & 3 \\ \hline
+    \cellcolor{lightgray}3 & \cellcolor{lightgray}3 & 4 & 5 & 2 & 1 \\ \hline
+    4 & \cellcolor{lightgray}3 &\cellcolor{lightgray} 3 & 1 & 2 & 3 \\ \hline
+    5 & 4 & \cellcolor{lightgray}3 & 6 & 2 & 1 \\ \hline
+    3 & 2 & 4 & 3 & 4 & 3 \\ \hline
+    2 & 3 & 4 & 1 & 5 & 6 \\ \hline
+  \end{tabular}
+\end{center}
+where the tiles connected to the origin are shaded.  In the next move,
+we choose colour 4 because we can increase the number of tiles connected
+to the origin by 5 tiles:
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}\hline
+    \cellcolor{lightgray} 4 & 2 & 3 & 4 & 2 & 3 \\ \hline
+    \cellcolor{lightgray}4 & \cellcolor{lightgray}4 & \cellcolor{lightgray}4 & 5 & 2 & 1 \\ \hline
+    \cellcolor{lightgray}4 & \cellcolor{lightgray}4 &\cellcolor{lightgray} 4 & 1 & 2 & 3 \\ \hline
+    5 & \cellcolor{lightgray}4 & \cellcolor{lightgray}4 & 6 & 2 & 1 \\ \hline
+    3 & 2 & \cellcolor{lightgray}4 & 3 & 4 & 3 \\ \hline
+    2 & 3 & \cellcolor{lightgray}4 & 1 & 5 & 6 \\ \hline
+  \end{tabular}
+\end{center}
+
+
+
+\section*{Input}
+
+The input consists of multiple test cases. The first line of input 
+is a single integer, not more than $20$, indicating the number
+of test cases to follow.  
+Each case starts with
+a line containing the integer $n$ ($1 \leq n \leq 20$).  The next $n$
+lines each contains $n$ characters, giving the initial colours of the 
+$n \times n$ board of tiles. Each colour is specified by a digit from
+1 to 6.
+
+
+\section*{Output}
+
+For each case, display two lines of output.  The first line
+specifies the number of moves needed to change all the tiles to the
+same colour.  The second line specifies 6 integers separated by a
+single space. The $i$th integer gives the number of times colour $i$
+is chosen as a move in the game.
+
