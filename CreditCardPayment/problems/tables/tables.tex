@@ -1,0 +1,70 @@
+\problemname{Tables}
+
+HTML uses a simple tag format for table layout.  You are to create
+ASCII-art tables based on a simplified notation.
+
+Logically, a table can be considered an $m$ by $n$ grid, each with a
+2-character wide by 1-character high cell, for example a $2 \times 3$ grid
+would be as follows:
+\begin{verbatim}
+                               -- -- -- 
+                              |11|12|13|
+                               -- -- -- 
+                              |21|22|23|
+                               -- -- -- 
+\end{verbatim}
+The output consists of $2m+1$ rows, each having $3n+1$ characters
+(including leading and trailing spaces in odd-numbered rows).
+
+But some tables are not strictly grid-based, because the values for
+certain cells can span multiple rows and/or columns.  Here is the
+layout if cell 11 has a row span of 2 and cell 22 has a column span of
+2:
+\begin{verbatim}
+                               -- -- -- 
+                              |11|12|13|
+                                  -- -- 
+                              |  |22   |
+                               -- -- --  
+\end{verbatim}
+You are to create these ASCII-art tables given $m$, and the row span
+and column span values.  % given in left-to-right and top-to-bottom order.
+
+\section*{Input}
+The input consists of multiple test cases.
+The first line of each test case contains one
+integer $m$, the number of rows.
+Then, $m$ lines follow, describing the row and column
+spans in the layout.  Each of the next $m$ lines gives the span information
+for a row. The span information is given only for the upper
+left cell in the span.  If $N$ row spans and column spans need to be
+specified for a given row, these would be specified as:
+\[
+N \  \texttt{RS}_1\  \texttt{CS}_1\  \ldots\ \texttt{RS}_N\ \texttt{CS}_N
+\]
+%\begin{verbatim}
+%N RS(1) CS(1) ... RS(N) CS(N)
+%\end{verbatim}
+where the values $\texttt{RS}_k$ and $\texttt{CS}_k$ are between 1 and 9, and specify how
+many rows and columns the next cell needing information in this row
+needs to occupy.  Previous row spans or column spans may imply that
+fewer cells than the total number of columns need to be specified
+for a particular row.
+
+%\newpage
+You may assume that the input is valid:
+\begin{itemize}
+\item the number of rows and columns are between 1 and 9;
+\item every row will have the same number of columns;
+\item there are no overlapping spans of cells;
+\item every cell is contained in some span of cells.
+\end{itemize}
+
+There are at most $100$ test cases and the end of input is indicated by $m
+= 0$. 
+
+\section*{Output}
+
+For each case, display the ASCII-art table, with the row-column index
+displayed in the top left corner of every span of cells. Display a blank
+line after every case.

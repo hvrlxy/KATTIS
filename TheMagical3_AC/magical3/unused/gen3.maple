@@ -1,0 +1,8 @@
+interface(quiet=true):
+writeto("magical3-04.in"):
+n := 2^31-1:
+for i from 1 to 5000 do
+  n := prevprime(n):
+  printf("%d\n", n+3):
+od:
+printf("0\n"):
