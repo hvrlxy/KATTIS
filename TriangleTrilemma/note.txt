@@ -1,0 +1,1 @@
+In this problem, you have to use the determinant method to check if the triangle area is larger than 0. The formula can be found in the problem Jabuke. Explanation for the formula: write the coordinate of the vertices as matrices, and multiply the matrix with 1/2. The determinant of the matrix is the area.
