@@ -1,0 +1,6 @@
+Game of Throwns notes:
+- changed directory name to throwns
+- added CTD validator
+- split LaTeX input to fit 80-column lines
+- added Python 2 solution
+- newline and extra space issues fixed in cases 1, 14 and 15
