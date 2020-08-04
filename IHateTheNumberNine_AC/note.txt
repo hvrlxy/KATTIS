@@ -1,0 +1,2 @@
+similar to project 1 in MCS-178 (SLIME).
+The algorithm runs in nlog(n) time by using binary search.
