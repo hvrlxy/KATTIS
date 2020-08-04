@@ -1,0 +1,23 @@
+\documentclass{article} 
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{systeme}
+\newtheorem{thm}{Theorem}
+\begin{document} 
+\title{Tight words} 
+\author{Ha Le} 
+\date{\today} 
+\maketitle 
+
+Given $n$, $k$, for all $1 \leq i \leq n$, $0 \leq j \leq k$. Define $t(i, j)$ to be the percentage of the number of tight words of length $i$ ending in $j$ over all possible words  of length $i$.
+
+We have the recurrence:
+
+\begin{align*}
+t(i, j) &= \systeme*{
+	\frac{100}{k + 1} when i = 1,
+	\frac{t(i - 1, 0) + t(i - 1, 1)}{k + 1} when j = 0,
+	\frac{t(i - 1), (j - 1) + t(i - 1, j) + t(i - 1, j + 1)}{k + 1}
+	\frac{t(i - 1, j - 1) + t(i - 1, j)} when j = k
+}
+\end{align*}
+\end{document}
