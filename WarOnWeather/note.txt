@@ -1,0 +1,1 @@
+Calculate the length of the sides of the triangle with vertices are the location of the target, the location of the satelites, and the center of the earth (0, 0, 0). Then determine if what kind of triangle it is. If it is an acute or a right triangle, then the target is in the sight of the satelites, and increment the count.
