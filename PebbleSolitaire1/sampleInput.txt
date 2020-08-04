@@ -1,0 +1,8 @@
+5
+---oo-------
+-o--o-oo----
+-o----ooo---
+oooooooooooo
+oooooooooo-o
+
+
