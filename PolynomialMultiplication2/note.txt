@@ -1,0 +1,1 @@
+Use DFT and FFT algorithm to solve this problem (Discrete Fourier Transformation and Fast Fourier Transformation).

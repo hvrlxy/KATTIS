@@ -1,0 +1,11 @@
+Def: Given a list of a1, a2, ..., an of integer 1, 2, 3, ... n. A pair (ai, aj) forms an inversion if i < j but ai > aj.
+Minimum number of inversion: 0
+Maximum number of inversion: n choose 2
+
+Conjecture: The number of minimum tranposition to get to the sorted permutation = the number of inversions.
+
+Let Ji be the set of all ai s.t. i < j but ai > aj. The sum of all Ji = the number of inversions.
+Proof by induction: Using the same logic used in insertion sort.
+
+Need an algorithm that runs in O(n log n)
+Solution: performing merge sort, but adding a count variable to whenever take a number from the second list (not ++, but add how many element left behind in the first list.)

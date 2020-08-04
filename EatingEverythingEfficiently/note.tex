@@ -1,0 +1,20 @@
+\documentclass{article}
+\begin{document}
+
+\title{Eating Everything Efficiently}
+\date{\today}
+\author{Ha Le}
+\maketitle
+
+Modifying the Longest Path Algorithm, but change the recursive formula into:
+
+If u is a sink (base case):
+\[
+dfs(u) = d[u]
+\]
+
+If u has an edge from it:
+\[
+dfs(u) = max(u + \frac{1}{2}dfs(u), dfs(u), dfs(i))
+\]
+\end{document}
